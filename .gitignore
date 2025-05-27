@@ -1,0 +1,5 @@
+# ignore the built images
+*.tar
+
+# ignore "Software bill of materials" files
+sbom-*
