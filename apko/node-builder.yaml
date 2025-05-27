@@ -12,6 +12,9 @@ contents:
     - npm
     - curl
     - wget
+    
+annotations:
+  org.opencontainers.image.source: "https://github.com/jomaro/base-images"
 
 archs:
   - x86_64

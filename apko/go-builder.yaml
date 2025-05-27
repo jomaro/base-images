@@ -12,6 +12,9 @@ contents:
     - curl
     - wget
 
+annotations:
+  org.opencontainers.image.source: "https://github.com/jomaro/base-images"
+
 environment:
   PATH: /usr/sbin:/sbin:/usr/bin:/bin:/root/go/bin
 
