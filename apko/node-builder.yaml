@@ -15,6 +15,9 @@ contents:
     
 annotations:
   org.opencontainers.image.source: "https://github.com/jomaro/base-images"
+  org.opencontainers.image.url: "https://github.com/jomaro/base-images/pkgs/container/node-builder"
+  org.opencontainers.image.description: "Image to build Node applications on CI."
+  org.opencontainers.image.title: "Node Builder"
 
 archs:
   - x86_64

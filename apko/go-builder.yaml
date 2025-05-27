@@ -14,6 +14,9 @@ contents:
 
 annotations:
   org.opencontainers.image.source: "https://github.com/jomaro/base-images"
+  org.opencontainers.image.url: "https://github.com/jomaro/base-images/pkgs/container/go-builder"
+  org.opencontainers.image.description: "Image to build GO applications on CI."
+  org.opencontainers.image.title: "GO Builder"
 
 environment:
   PATH: /usr/sbin:/sbin:/usr/bin:/bin:/root/go/bin

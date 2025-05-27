@@ -11,6 +11,9 @@ contents:
 
 annotations:
   org.opencontainers.image.source: "https://github.com/jomaro/base-images"
+  org.opencontainers.image.url: "https://github.com/jomaro/base-images/pkgs/container/base-runner"
+  org.opencontainers.image.description: "Base image to run applications in production."
+  org.opencontainers.image.title: "base-runner"
 
 archs:
   - x86_64
