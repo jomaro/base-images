@@ -15,6 +15,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.23.0'
+
+      - run: go version
+
+      - name: Install apko
+        uses: go install chainguard.dev/apko@latest
+
+      - run: apko version
+        
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build
-        run: echo "oi eu sou goku" 
+        run: make runner-build
