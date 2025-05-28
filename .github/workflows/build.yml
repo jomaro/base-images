@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '>=1.23.0'
+          
+      - run: docker run cgr.dev/chainguard/apko version
 
       - run: go version
 
