@@ -22,12 +22,12 @@ jobs:
           
       - run: docker run cgr.dev/chainguard/apko version
 
-      - run: go version
+      # - run: go version
 
-      - name: Install apko
-        uses: go install chainguard.dev/apko@latest
+      # - name: Install apko
+      #   uses: go install chainguard.dev/apko@latest
 
-      - run: apko version
+      # - run: apko version
         
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
