@@ -1,4 +1,4 @@
-name: "Build Images"
+name: "Build Go Builder"
 
 on: workflow_dispatch
 # on:
@@ -6,9 +6,6 @@ on: workflow_dispatch
 #     branches: [ main ]
 #   pull_request:
 #     branches: [ main ]
-
-permissions:
-  packages: write
 
 jobs:
   test:
@@ -37,7 +34,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_TOKEN }}
       
       - name: Build and Push
-        run: make runner-full
+        run: make go-full

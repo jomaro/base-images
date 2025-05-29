@@ -1,0 +1,40 @@
+name: "Build Base Runner Image"
+
+on: workflow_dispatch
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+jobs:
+  test:
+    name: Build
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.23.0'
+          
+      - run: docker run cgr.dev/chainguard/apko version
+
+      # - run: go version
+
+      # - name: Install apko
+      #   uses: go install chainguard.dev/apko@latest
+
+      # - run: apko version
+        
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_TOKEN }}
+      
+      - name: Build and Push
+        run: make runner-full
