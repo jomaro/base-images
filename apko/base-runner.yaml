@@ -6,6 +6,7 @@ contents:
     - https://packages.wolfi.dev/os
 
   packages:
+    - wolfi-base
     - ca-certificates-bundle
     - bash
 
